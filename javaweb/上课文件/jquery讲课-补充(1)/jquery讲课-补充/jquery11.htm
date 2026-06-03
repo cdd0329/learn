@@ -1,0 +1,42 @@
+﻿
+<pre>
+delegate方法参数说明:
+
+
+delegate(childSelector,event,function)
+
+
+childSelector: 子元素的选择器
+
+event: 事件名称，
+比如: 'click'
+function: 当事件触发执行的函数
+
+小结
+事件代理就是使用父元素来代理子元素的事件
+，好处是减少事件的绑定次数，提高性能。
+
+使用场景当多个相同的子元素绑定同一个事件，
+可以使用事件代理。
+事件代理使用是使用delegate方法来完成
+
+</pre>
+<script src="jquery-3.2.1.min.js"></script>
+
+<script>
+$(function(){
+    $list = $('#list');
+    // 父元素ul 来代理 子元素li的点击事件
+    $list.delegate('li', 'click', function() {
+        // $(this)表示当前点击的子元素对象
+        $(this).css({background:'red'});
+    });
+})
+ </script>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>

@@ -1,0 +1,27 @@
+﻿
+<script type="text/javascript">
+//JS车牌号正则正则表达式
+
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+
+var cPattern = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/;
+//输出 true
+//document.write(cPattern.test("新K39006"));
+
+if(cPattern.test(str))
+ alert("ok :JS 车牌号正则正则表达式");
+ else
+ alert("error:JS 车牌号正则正则表达式");
+
+}
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试" onclick="isValid()">

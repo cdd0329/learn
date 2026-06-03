@@ -1,0 +1,25 @@
+﻿
+<script type="text/javascript">
+//JS 判断字符串是否全部为字母
+
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+if(/^[a-zA-Z]+$/.test(str))
+ alert("ok :JS 判断字符串是否全部为字母");
+else
+alert("error:JS 判断字符串是否全部为字母");
+
+ 
+
+
+}
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试"  onclick="isValid()">

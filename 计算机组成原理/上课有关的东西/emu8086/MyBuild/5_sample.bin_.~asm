@@ -1,0 +1,90 @@
+; 功能：输入10个一位数字，找最大值最小值并显示
+
+data segment
+buf db 10 dup(0)         ; 存放输入的10个一位数（初始化为0）
+max db 0                 ; 保存最大值
+min db 0                 ; 保存最小值
+
+msg_max db 13,10,'Max=','$' ; Max= 开头 + 换行
+msg_min db 13,10,'Min=','$' ; Min= 开头 + 换行
+data ends
+
+code segment
+assume cs:code, ds:data
+
+start:
+; 初始化数据段
+mov ax, data
+mov ds, ax
+
+; 第一步：输入10个一位数字
+mov cx, 10              ; 循环10次
+xor si, si              ; SI为数组索引
+
+read_loop:
+mov ah, 1               ; INT 21H, 功能1：从键盘读取字符（会自动显示）
+int 21h
+sub al, '0'             ; 把ASCII码变成数字（如'3'->3）
+mov [buf + si], al      ; 存到buf[si]
+inc si
+loop read_loop
+
+; 第二步：查找最大最小值
+mov al, [buf]           ; AL = 第一个数
+mov bl, al              ; BL存最大值
+mov bh, al              ; BH存最小值
+
+mov cx, 9               ; 剩下9个数字
+mov si, 1               ; 从buf[1]开始比较
+
+find_loop:
+mov al, [buf + si]
+
+; 比较最大值
+cmp al, bl
+jle skip_max
+mov bl, al              ; 更新最大值
+skip_max:
+
+; 比较最小值
+cmp al, bh
+jge skip_min
+mov bh, al              ; 更新最小值
+skip_min:
+
+inc si
+loop find_loop
+
+; 保存最终结果
+mov [max], bl
+mov [min], bh
+
+; 第三步：显示 Max
+mov ah, 9
+lea dx, msg_max         ; 输出字符串 "Max="
+int 21h
+
+mov dl, [max]
+add dl, '0'             ; 转为ASCII字符
+mov ah, 2
+int 21h
+
+; 第四步：显示 Min
+mov ah, 9
+lea dx, msg_min         ; 输出字符串 "Min="
+int 21h
+
+mov dl, [min]
+add dl, '0'             ; 转为ASCII字符
+mov ah, 2
+int 21h
+
+; 程序退出
+mov ah, 4ch
+int 21h
+
+
+
+
+
+; [SOURCE]: D:\课程总结\大二\下半学期\计算机组成原理\上课有关的东西\emu8086\examples\5_sample.asm

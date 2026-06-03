@@ -1,0 +1,72 @@
+﻿题型：15道单选，7个判断，4填空题，4个问答题(20分)，2个综合题(35分)
+目标70分
+建议：根据知识点，整理出复习材料(跑代码)，然后背。
+
+
+html:
+	常用标签：p, div, span, ...
+	form/table: 完整页面代码, JS相关处理(jquery)
+	
+CSS：
+	字体、颜色、背景
+	边距、定位、布局
+
+JavaScript/ES6：
+	String/Number/Array：常用方法
+	var/let/const: es6中的let/const
+	定时器：
+		setTimeout()/clearTimeout(), setInterval()/clearInterval()
+		let t = setTimeout(() => {...}, 1000);
+		clearTimeout(t);
+	类定义：
+		https://wangdoc.com/es6/class
+
+	箭头函数：
+		概念，形式，适用
+
+	异步编程：
+		promise/async/wait
+	jquery:
+		$(function() {
+			...
+		})
+		选择器，绑定事件，this获得dom对象
+		常用方法: val()/html()...
+
+	变量的解构赋值：
+
+Servlet：
+	servlet/filter/listener: 场景
+	如何注册？
+
+	Servlet生命周期：
+	request，response，session，ServletContext：
+		作用，常用方法
+
+	MVC：M, V, C
+	Servlet的作用：
+		如何接收用户请求，调用业务方法，携带数据进行页面跳转?		
+
+JSP:
+	3个指令：page/taglib/include
+		<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+
+	内置对象：
+	EL表达式隐含对象：常用有哪些
+	JSP脚本：
+		<% 语句; %>
+		<%= 表达式 %>
+		<%! 声明语句; %>
+		<%-- 注释 --%>
+	JSTL标签库：
+		core：常用标签: if, forEach, set...
+
+		身份证,密码,邮箱,电话号码
+
+示例场景：
+	图书管理CRUD某个完整的功能:
+		页面, 
+		service: 写SQL + dbutils
+		servlet: 处理业务
+		页面跳转, 显示处理结果
+

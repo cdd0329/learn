@@ -1,0 +1,25 @@
+﻿
+<script type="text/javascript">
+//JS用户名正则，4到16位（字母，数字，下划线，减号）
+
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+
+var uPattern = /^[a-zA-Z0-9_-]{4,16}$/;
+
+if(uPattern.test(str))
+ alert("ok :JS 用户名正则，4到16位（字母，数字，下划线，减号）");
+ else
+ alert("error:JS 用户名正则，4到16位（字母，数字，下划线，减号）");
+
+}
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试" onclick="isValid()">

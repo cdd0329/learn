@@ -1,0 +1,27 @@
+﻿
+<script type="text/javascript">
+//JSQQ 号码正则表达式
+
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+
+var qqPattern = /^[1-9][0-9]{4,10}$/;
+//输出 true
+//document.write(qqPattern.test("65974040"));
+
+if(qqPattern.test(str))
+ alert("ok :JS QQ 号码正则表达式");
+ else
+ alert("error:QQ 号码正则表达式");
+
+}
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试" onclick="isValid()">

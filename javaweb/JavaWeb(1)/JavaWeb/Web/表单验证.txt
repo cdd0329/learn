@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单验证</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('#form').submit(function(event){
+                event.preventDefault();
+                var name = $('#name').val();
+                var password = $("#password").val();
+                var email = $("#email").val();
+
+                if (name === '') {
+                    alert('请输入姓名');
+                    return;
+                }
+                if(password === ''){
+                    alert("密码不为空");
+                    return;
+                }
+                if(email === ''){
+                    alert("电子邮件不为空");
+                    return;
+                }
+                alert("提交成功");
+            });
+        });
+    </script>
+</head>
+<body>
+<form id="form">
+    用户名<input id = "name" type="text">
+    <br/>
+    密码<input id = "password" type="password">
+    <br/>
+    电子邮件<input id="email" type="email">
+    <br/>
+    <input id = "button" type="submit" value="提交">
+</form>
+</body>
+</html>

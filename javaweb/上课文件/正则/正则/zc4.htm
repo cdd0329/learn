@@ -1,0 +1,25 @@
+﻿
+<script type="text/javascript">
+//JS 密码强度正则表达式，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
+
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+
+var pPattern = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/;
+
+if(pPattern.test(str))
+ alert("ok :JS 密码强度正则表达式，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符");
+ else
+ alert("error:JS 密码强度正则表达式，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符");
+
+}
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试" onclick="isValid()">

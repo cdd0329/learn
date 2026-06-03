@@ -1,0 +1,61 @@
+<a href="https://www.baidu.com">点击访问百度</a>
+<link rel="stylesheet" href="styles.css">rel="stylesheet"：说明链接的资源是一个样式表（CSS 文件
+
+HTTP 状态码 502 Bad Gateway 表示：服务器作为网关或代理，从上游服务器收到无效响应
+<body onLoad="f1()">：当页面加载完成时，会调用f1()函数。
+<body onError="f2()">：当页面加载过程中发生错误时，会调用f2()函数。
+<input onFocus="g1()" onClick="g2()">：当用户将焦点放在这个输入框上时，会调用g1()函数；当用户点击这个输入框时，会调用g2()函数。
+JSP 注释 (<%-- --%>)
+<!--注释内容-->（这个注释会被发送到服务器）
+//注释内容或/*注释内容*/
+JSP程序段就是插入JSP程序的java代码段中
+JSP的3个指令是page、include（插入外部文件）和taglib（插入外部标签）
+page指令的import属性用来导入包
+当JSP程序出现未被捕获的异常时可以使用errorPage设置要跳转的页面。
+include动作只会把文件中的输出包含到JSP页面，而include指令是把文件包含到JSP页面。
+以下用于控制文本颜色的CSS属性是：color
+相对定位的元素相对于什么进行偏移：文档流中的原始位置
+Bootstrap 是一个用于快速开发响应式网页的 前端框架
+以下用于控制文本加粗的CSS属性是：font-weight
+Bootstrap的栅格系统基于多少列？12
+以下用于设置元素透明度的CSS属性是:opacity
+在Bootstrap中，以下哪个类用于创建一个响应式的模态对话框？modal
+<div>是块级元素，<span>是行内元素
+相对定位的元素是否会影响其他元素的布局？否，不会脱离文档流
+在以下的HTML中，哪个是正确引用外部样式表的方法？<link rel="stylesheet" type="text/css" href="style.css">
+以下哪个选择器用于选择页面中所有被鼠标悬停的<a>元素？a:hover
+以下用于控制无序列表<ul>前的项目符号样式的CSS属性是：list-style-type
+CSS的全称是：Cascading Style Sheets
+以下哪个选择器可以选择页面中所有具有特定类名的元素？.class-name
+<span> 用于行内小范围样式调整，比如突出几个单词、改颜色、字体等。
+在 Bootstrap 中，用于创建响应式导航栏的类是：navbar
+在Flex布局中，justify-content属性的作用是：控制子项在主轴上的对齐方式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

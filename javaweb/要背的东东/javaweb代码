@@ -1,0 +1,334 @@
+javaweb代码
+在JavaScript中，编写一个用户User类，属性有名字（name）、年龄（age），方法有show( )，在方法中使用alert弹出用户的名字和年龄。定义一个对象并调用方法。
+<script>
+class User{
+	var name;
+	var age;
+	constructor(name,age){
+	this.name=name;
+	this.age=age;
+	}
+	show(){
+	alert('姓名:${this.name},年龄:${this.age}');
+	}
+}
+	var user=new User('张三',28);
+	user.show();
+</script>
+
+请详细描述Servlet的生命周期。
+servlet有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由javax.servlet.Servlet接口的init,service和destroy方法表达。描述Servlet请求的流程。HTTP协议基于请求响应模式，客户端向服务器发送一个请求，服务器则以一个状态行为作为响应。
+（1）第1次访问servlet时，实例化Servlet类并调用init方法进行初始化。
+（2）每次访问servlet时，调用service方法，service方法根据请求的类型，再调用相应的doGet或doPost()方法。
+（3）当Servlet容器关闭或重启时，调用destory方法销毁servlet对象。
+（4）Servlet默认是单实例的。
+假设有一个过滤器，其全限定名为：com.web.EncodingFilter，要求它能拦截所有的请求，且可传入字符集参数charset。请在web.xml文件中注册此过滤器。
+<filter>
+<filter-name>EncodingFilter</filter-name>
+<filter-class>com.web.EncodingFilter</filter-class>
+<init-param>
+<param-name>charset</param-name>
+<param-value>UTF-8</param-value>
+</init-param>
+</filter>
+<filter-mapping>
+<filter-name>EncodingFilter</filter-name>
+<url-pattern>/*</url-pattern>
+</filter-mapping>
+1）、使用html编写出上图效果的页面（7分）
+<!DOCTYPE>
+<html>
+<head><title>用户注册</title></head>
+<body>
+<center>
+<h1>用户注册</h1>
+<hr>
+<form action="#" method="post" onsubmit="return checkval()">
+<table>
+<tr>
+<td align="right">账号：</td>
+<td> <input type="text" name="name" id="name"></td>
+</tr>
+<tr>
+<td align="right">密码:</td>
+<td><input type="password" name="passwd" id="passwd"></td>
+</tr>
+<tr>
+<td align="right">确认密码:</td>
+<td><input type="password" name="passwd2" id="passwd2"></td>
+</tr>
+
+<tr align="center">
+<td colspan="2">
+<input type="submit" value="确定">
+<input type="reset" value="取消">
+</td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>
+2）、提交表单时使用JS验证：①账号为4-8个字符；②密码不能为空，且二次密码必须相同。（7分）
+<script>
+function checkval(){
+	var name=document.getElementById('name');
+	var passwd1=document.getElementById('passwd');
+	var passwd2=document.getElementById('passwd2');
+	var pattern=/^\w{4,8}$/；
+	if(!pattern.test(name)){
+	alert('账号必须为[4,8]位字符');
+	name.focus();
+	return false;
+	}
+	if(passwd.value==''){
+	alert('密码不能为空');
+	passwd1.focus();
+	return false;
+	}
+	if(passwd2.value!=passwd.value){
+	alert('两次密码不相同');
+	passwd.value=' ';
+	passwd2.focus();
+	return false;
+	}
+	return true;
+}
+</script>
+30、编写一个Servlet，获得用户信息列表，然后跳转到user_list.jsp页面，在此页面中使用JSTL标签展示用户列表信息。假设userService对象有方法listAll()返回用户列表List<User>，用户信息：ID(id)、姓名(name)、密码(passwd)。
+1)、编写Servlet类的doPost()方法；
+public void doPost(HttpServletRequest req,HttpServletResponse resp)throws Exception{
+	List<User> list=userService.listAll();
+	req.setAttribute("list",list);
+	req.getRequestDispatcher("/user_list.jsp").forword(req,resp);
+}
+2)、在web.xml文件中注册此Servlet类；
+<servlet>
+<servlet-name>UserListServlet</servlet-name>
+<servlet-class>com.web.UserListServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>UserListServlet</servlet-name>
+<url-pattern>/userList</url-pattern>
+</servlet-mapping>
+3)、使用JSTL标签编写展示用户列表JSP页面中的table部分。
+<table>
+<tr>
+<td>序号</td>
+<td>ID</td>
+<td>姓名</td>
+<td>密码</td>
+</tr>
+<c:forEach var="s" items="${list}" varStatus="idx">
+<tr>
+<td>${idx.index+1}<td>
+<td>${s.id}</td>
+<td>${s.name}</td>
+<td>${s.passwd}</td>
+</tr>
+</c:forEach>
+</table>
+
+(1)
+<!DOCTYPE>
+<html>
+<body>
+</body>
+</html>
+<div>
+<h1 align="center">课程录入</h1>
+<a href="index.jsp">返回主页</a>
+<form action="#(CourServlet?method=add)" method="post" onsubmit="return check()">
+<div class="a">
+课程名称<input type="text" id="name" name="name">
+</div>
+<div class="a">
+任课教师
+<input type="text" id="teacher" name="teacher">
+</div>
+<div class="a">
+上课地点<input type="text" id="classroom" name="classroom">
+</div>
+<div class="a">
+<button type="submit" class="b">保存</button>
+</div>
+</form>
+</div>
+(2)第二小问判断表单元素是否为空（输入框是否为空）。。。长度。。。正则。。。字母组成啥的
+<script>
+function check(){
+	var name=document.getElementById("name");
+	var teacher=document.getElementById("teacher");
+	var classroom=document.getElementById("classroom")
+	if(name.value=" "){
+	alert('课程名称不能为空');
+	name.focus();
+	return false;
+	}
+	if(teacher.value=" "){
+	alert('任课教师不能为空');
+	teacher.focus();
+	return false;
+	}
+	if(classroom.value=" "){
+	alert('上课地点不能为空');
+	classroom.focus();
+	return false;
+	}
+	return true;
+}
+</script>
+(3)在人数设定为50-100人 只能输入数字。。。。
+<script>
+var pattern=/^[5-9][0-9]|100$/;
+if(!pattern.test(classroom_man.value)){
+	alert('班级人数为50-100之间的数字，请重新输入');
+	classroom_man.value=" ";
+	classroom_man.value.focus();
+	return false;
+}
+</script>
+(4)那我在这里限制教师名只能输入英文并且大小写字长为6-20之间,考试的时候看需求更改
+<script>
+var pattern=/^[A-Za-z]{6,20}$/;
+if(!pattern.test(teacher.value)){
+	alert('教师的名字必须是大小写组成的英文字母，长度6-20，请重新请输入');
+	teacher.focus();
+	return false;
+}
+</script>
+总代码：
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>iii</title>
+<style>
+.a{
+	margin-top:20px;
+}
+.b{
+	font-size:20px;
+	width:160px;
+	color:white;
+	background-color:greenyellow;
+}
+</style>
+</head>
+<body>
+
+<div>
+<h1 align="center">课程录入</h1>
+<a href="index.jsp">返回主页</a>
+<form action="#(CourServlet?method=add)" method="post" onsubmit="return check()">
+<div class="a">
+课程名称<input type="text" id="name" name="name">
+</div>
+<div class="a">
+任课教师
+<input type="text" id="teacher" name="teacher">
+</div>
+<div class="a">
+上课地点<input type="text" id="classroom" name="classroom">
+</div>
+<div class="a">
+<button type="submit" class="b">保存</button>
+</div>
+</form>
+</div>
+
+<script>
+function check(){
+	var name=document.getElementById("name");
+	var teacher=document.getElementById("teacher");
+	var classroom=document.getElementById("classroom")
+	if(name.value=" "){
+	alert('课程名称不能为空');
+	name.focus();
+	return false;
+	}
+	if(teacher.value=" "){
+	alert('任课教师不能为空');
+	teacher.focus();
+	return false;
+	}
+	if(classroom.value=" "){
+	alert('上课地点不能为空');
+	classroom.focus();
+	return false;
+	}
+	var pattern=/^[5-9][0-9]|100$/;
+if(!pattern.test(classroom_man.value)){
+	alert('班级人数为50-100之间的数字，请重新输入');
+	classroom_man.value=" ";
+	classroom_man.value.focus();
+	return false;
+}
+
+var pattern=/^[A-Za-z]{6,20}$/;
+if(!pattern.test(teacher.value)){
+	alert('教师的名字必须是大小写组成的英文字母，长度6-20，请重新请输入');
+	teacher.focus();
+	return false;
+}
+
+	return true;
+}
+</script>
+</body
+</html>
+
+(1)
+public List<Course>list(){
+	String sql="select * from course";
+	List<Course>list =new ArrayList<>();
+	//连接数据库
+	Connection conn=DBUtil.getConn();
+	Statement state=null;
+	ResultSet rs=null;
+	state=conn.createStatement();
+	rs=state.executeQuery(sql);
+	Course bean=null;
+	while(rs.next()){
+	int id=rs.getInt("id")；
+	String name=rs.getString("name");
+	String teacher=rs.getString("teacher");
+	String classroom=rs.getString("classroom");
+	bean=new Course(in,name,teacher,classroom);
+	list.add(bean);
+	}
+	DButil.close(rs,state,conn);
+	return list
+	}
+}
+(2)
+public void list(HttpServletRequest req,HttpServletResponse resp)throws IOException,ServletException{
+	req.setCharacterEncoding("utf-8");
+	CourseDao dao=new CourseDao();
+	List<Course> course=dao.list();
+	req.setAttribute("courses",courses);
+	req.getRequestDispatcher("list.jsp").forward(req,resp);
+}
+(3)
+<div>
+<h1 style="color:red">课程信息列表</h1>
+<a href="index.jsp">返回主页</a>
+<table class="tb">
+<tr>
+<td>id</td>
+<td>课程名称</td>
+<td>任课教师</td>
+<td>上课地点</td>
+</tr>
+<c:forEach var="item" items="${courses}">
+<tr>
+<td>${item.id}</td>
+<td>${item.name}</td>
+<td>${item.teacher}</td>
+<td>${item.classroom}</td>
+</tr>
+<c:forEach>
+</table>
+</div>
+
+

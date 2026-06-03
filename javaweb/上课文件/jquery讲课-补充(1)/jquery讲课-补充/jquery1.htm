@@ -1,0 +1,37 @@
+﻿ <pre>
+1. jQuery的引入
+<script src="js/jquery-1.12.4.min.js"></script>
+
+Query的入口函数
+我们知道使用js获取标签元素，
+需要页面加载完成以后再获取，
+我们通过给onload事件属性设置了一个函数来获取标签元素，
+而jquery提供了ready函数来解决这个问题，保证获取标签元素没有问题，它的速度比原生的 window.onload 更快。
+
+入口函数示例代码:
+
+2.
+  // 完整写法
+  $(document).ready(function(){
+       ...
+  });
+ 
+  // 简化写法
+  $(function(){
+       ...
+  });
+
+</pre>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    window.onload = function(){
+        var oDiv = document.getElementById('div01');
+        alert('原生就是获取的div：' + oDiv);
+    };
+    $(document).ready(function(){
+        var $div = $('#div01');
+        alert('jquery获取的div：' + $div);
+    });
+</script>
+ 
+<div id="div01">这是一个div</div>

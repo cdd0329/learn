@@ -1,0 +1,69 @@
+﻿
+<pre>
+1.  选择集转移介绍
+选择集转移就是以选择的标签为参照
+，然后获取转移后的标签
+
+选择集转移操作
+
+$('#box').prev(); 表示选择id是box元素的上一个的同级元素
+
+$('#box').prevAll(); 表示选择id是box元素的上面所有的同级元素
+
+$('#box').next(); 表示选择id是box元素的下一个的同级元素
+
+$('#box').nextAll(); 表示选择id是box元素的下面所有的同级元素
+
+$('#box').parent(); 表示选择id是box元素的父元素
+
+$('#box').children(); 表示选择id是box元素的所有子元素
+
+$('#box').siblings(); 表示选择id是box元素的其它同级元素
+
+$('#box').find('.myClass'); 表示选择id是box元素的class等于myClass的元素
+2.
+prev() 表示获取上一个同级元素
+
+prevAll() 表示获取上面所有同级元素
+
+next() 表示获取下一个同级元素
+
+nextAll() 表示获取下面所有同级元素
+
+parent() 表示获取父元素
+
+children() 表示获取所有的子元素
+
+siblings() 表示获取其它同级元素
+
+find("选择器名称") 表示获取指定选择器的元素
+
+
+
+
+</pre>
+<script src="jquery-3.2.1.min.js"></script>
+
+
+  <script>
+    $(function(){
+        var $div = $('#div01');
+ 
+        $div.prev().css({'color':'red'});
+        $div.prevAll().css({'text-indent':150});
+        $div.next().css({'color':'blue'});
+        $div.nextAll().css({'text-indent':80});
+        $div.siblings().css({'text-decoration':'underline'})
+        $div.parent().css({'background':'gray'});
+        $div.children().css({'color':'red'});
+        $div.find('.sp02').css({'font-size':30});
+    });  
+</script>
+ 
+<div>
+    <h2>这是第一个h2标签</h2>
+    <p>这是第一个段落</p>
+    <div id="div01">这是一个<span>div</span><span class="sp02">第二个span</span></div>
+    <h2>这是第二个h2标签</h2>
+    <p>这是第二个段落</p>
+</div>

@@ -1,0 +1,34 @@
+﻿
+<pre>
+事件代理介绍
+事件代理就是利用事件冒泡的原理(事件冒泡就是事件会向它的父级一级一级传递),
+把事件加到父级上，通过判断事件来源，执行相应的子元素的操作，
+事件代理首先可以极大减少事件绑定次数，提高性能；
+其次可以让新加入的子元素也可以拥有相同的操作。
+</pre>
+<script src="jquery-3.2.1.min.js"></script>
+
+
+   
+ <script>
+    $(function(){
+ 
+        var $div1 = $('#div1');
+        var $div2 = $('#div2');
+ 
+        $div1.click(function(){
+            alert($(this).html());
+        }); 
+ 
+        $div2.click(function(){
+            alert($(this).html());
+        }); 
+    });
+</script>
+ 
+ <div id="div1" style="width:200px; height:200px; background: red;">
+    转到父亲层面
+    <div id="div2" style="width:100px; height:100px;background: yellow;">
+        哈哈
+    </div>
+</div>

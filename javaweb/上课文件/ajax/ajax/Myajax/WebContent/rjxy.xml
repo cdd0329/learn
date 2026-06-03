@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 软件学院 -->
+<rjxy>
+	<teacher>
+		<TITLE>授课教师</TITLE>
+		<laoshi>张某</laoshi>
+		<kc>中国</kc>
+		
+		
+	</teacher>
+	<teacher>
+		<TITLE>授课教师</TITLE>
+		<laoshi>王某</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>授课教师</TITLE>
+		<laoshi>李某 Parton</laoshi>
+		<kc>USA</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Still got the blues</TITLE>
+		<laoshi>Gary Moore</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Eros</TITLE>
+		<laoshi>Eros Ramazzotti</laoshi>
+		<kc>EU</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>One night only</TITLE>
+		<laoshi>Bee Gees</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Sylvias Mother</TITLE>
+		<laoshi>Dr.Hook</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Maggie May</TITLE>
+		<laoshi>Rod Stewart</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Romanza</TITLE>
+		<laoshi>Andrea Bocelli</laoshi>
+		<kc>EU</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>When a man loves a woman</TITLE>
+		<laoshi>Percy Sledge</laoshi>
+		<kc>USA</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Black angel</TITLE>
+		<laoshi>Savage Rose</laoshi>
+		<kc>EU</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>1999 Grammy Nominees</TITLE>
+		<laoshi>Many</laoshi>
+		<kc>USA</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>For the good times</TITLE>
+		<laoshi>Kenny Rogers</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Big Willie style</TITLE>
+		<laoshi>Will Smith</laoshi>
+		<kc>USA</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Tupelo Honey</TITLE>
+		<laoshi>Van Morrison</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>The very best of</TITLE>
+		<laoshi>Cat Stevens</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Stop</TITLE>
+		<laoshi>Sam Brown</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Bridge of Spies</TITLE>
+		<laoshi>T'Pau</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Private Dancer</TITLE>
+		<laoshi>Tina Turner</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Midt om natten</TITLE>
+		<laoshi>Kim Larsen</laoshi>
+		<kc>EU</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Pavarotti Gala Concert</TITLE>
+		<laoshi>Luciano Pavarotti</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>The dock of the bay</TITLE>
+		<laoshi>Otis Redding</laoshi>
+		<kc>USA</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Picture book</TITLE>
+		<laoshi>Simply Red</laoshi>
+		<kc>EU</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Red</TITLE>
+		<laoshi>The Communards</laoshi>
+		<kc>UK</kc>
+		
+	</teacher>
+	<teacher>
+		<TITLE>Unchain my heart</TITLE>
+		<laoshi>Joe Cocker</laoshi>
+		<kc>USA</kc>
+		
+	</teacher>
+</rjxy>

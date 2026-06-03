@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=  <, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+  <input type="radio" value=""/>吃
+  <input type="radio" value=""/>喝
+  <input type="radio" value=""/>玩
+  <input type="radio" value=""/>乐
+  <input type="radio" value=""/>减肥
+  <input type="button" id="btn1" name="name" value=" 全选"/>
+  <input type="button" id="btn2" name="name" value=" 全不选"/>
+  <input type="button" id="btn3" name="name" value=" 反选"/>
+  <script>
+    $(function(){
+        var input=$("input[type=radio]");
+        $("#btn1").click(function(){
+          $.each(input,function(index,value){
+            input[index].checked=true;
+          })
+        })
+
+        $("#btn2").click(function(){
+             $.each(input,function(index,value){
+              input[index].checked=false;
+             })
+        })
+
+        $("#btn3").click(function(){
+           $.each(input,function(index,value){
+            input[index].checked=input[index].checked==true?false:true;
+           })
+        })
+    });
+    
+  </script>
+</body>
+</html>

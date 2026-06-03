@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #bgDiv {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: black;
+            opacity: 0.2; /*设置不透明度*/
+            display: none;
+        }
+
+        #fgDiv {
+            position: absolute;
+            width: 250px;
+            height: 100px;
+            border: 1px solid #808080;
+            background-color: #808080;
+            display: none;
+            border-radius: 5px 5px; /*设置圆角*/
+        }
+
+        td {
+            text-align: center;
+        }
+
+        #fgDiv input {
+            align-items: center;
+        }
+    </style>
+   <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+
+            var list = [
+                { id: "1", country: "中国", capital: "北京" },
+                { id: "2", country: "美国", capital: "纽约" },
+                { id: "3", country: "日本", capital: "东京" },
+                { id: "4", country: "韩国", capital: "首尔" },
+            ];
+            //生成表格数据
+            $.each(list, function (index, item) {
+                $('<tr id="' + item.id + '"><td><input type="checkbox" /></td><td>' + item.id + '</td><td>' + item.country + '</td><td>' + item.capital + '</td><td><input type="button" value="修改"/></td></tr>').appendTo($("#list"));
+            });
+            //为复选框checkAll设置点击事件，完成全选、全消的功能
+            $("#checkAll").click(function () {
+                //根据当前复选框的状态设置其它行复选框的状态
+                $("#list :checkbox").attr("checked", this.checked);
+            });
+            //反选
+            $("#btnReverse").click(function () {
+                //数据行的复选框
+                $("#list :checkbox").each(function () {
+                    this.checked = !this.checked;
+                });
+            });
+            //删除选中行
+            $("#btnDelete").click(function () {
+                //$("#list :checked").parent().parent().remove();
+                $("#list :checked").parents("tr").remove();
+            });
+            //添加
+            $("#btnAdd").click(function () {
+                //显示添加界面
+                $("#bgDiv").css("display", "block").css("width", window.innerWidth + "px").height(window.innerHeight + "px");
+                $("#fgDiv").css("display", "block").css("left", (window.innerWidth - 250) / 2 + "px").css("top", (window.innerHeight - 100) / 2 + "px");
+
+                //打开的清除文本框中的数据
+                //$("#fgDiv input[type=text]").val('');
+                $("#fgDiv :text,:hidden").val('');
+            });
+            //保存
+            $("#btnSave").click(function () {
+                var id = $("#hidId").val();
+                if (id == '') {//添加
+                    $('<tr id="' + $("#textId").val() + '"><td><input type="checkbox"/></td><td>' + $("#textId").val() + '</td><td>' + $("#textCountry").val() + '</td><td>' + $("#textCapital").val() + '</td><td><input type="button" value="修改"/></td></tr>').appendTo($("#list")).find(":button").click(function () {
+                        //显示添加界面
+                        $("#bgDiv").css("display", "block").css("width", window.innerWidth + "px").height(window.innerHeight + "px");
+                        $("#fgDiv").css("display", "block").css("left", (window.innerWidth - 250) / 2 + "px").css("top", (window.innerHeight - 100) / 2 + "px");
+                        //找到当前按钮所在td之前的所有td
+                        var tds = $(this).parent().prevAll();
+                        //设置文本框的值
+                        $("#hidId").val(tds.eq(2).text());//隐藏域存放修改之前的行的ID编号值
+                        $("#textId").val(tds.eq(2).text());
+                        $("#textCountry").val(tds.eq(1).text());
+                        $("#textCapital").val(tds.eq(0).text());
+                    });
+                    //为最新添加的一行数据的修改按钮绑定事件
+                    //$("#list :button:last").click(function () {
+                    //    //显示添加界面
+                    //    $("#bgDiv").css("display", "block").css("width", window.innerWidth + "px").height(window.innerHeight + "px");
+                    //    $("#fgDiv").css("display", "block").css("left", (window.innerWidth - 250) / 2 + "px").css("top", (window.innerHeight - 100) / 2 + "px");
+                    //    //找到当前按钮所在td之前的所有td
+                    //    var tds = $(this).parent().prevAll();
+                    //    //设置文本框的值
+                    //    $("#hidId").val(tds.eq(2).text());//隐藏域存放修改之前的行的ID编号值
+                    //    $("#textId").val(tds.eq(2).text());
+                    //    $("#textCountry").val(tds.eq(1).text());
+                    //    $("#textCapital").val(tds.eq(0).text());
+                    //});
+                } else {//修改
+                    var trds = $("#" + id + ">td");
+                    trds.eq(1).text($("#textId").val());
+                    trds.eq(2).text($("#textCountry").val());
+                    trds.eq(3).text($("#textCapital").val());
+                    //修改tr的id属性，保持数据一致
+                    $("#" + id).attr("id", $("#textId").val());
+                }
+                //隐藏界面
+                $("#bgDiv").css("display", "none");
+                $("#fgDiv").css("display", "none");
+            });
+            //修改
+            $("#list :button").click(function () {
+                //显示添加界面
+                $("#bgDiv").css("display", "block").css("width", window.innerWidth + "px").height(window.innerHeight + "px");
+                $("#fgDiv").css("display", "block").css("left", (window.innerWidth - 250) / 2 + "px").css("top", (window.innerHeight - 100) / 2 + "px");
+                //找到当前按钮所在td之前的所有td
+                var tds = $(this).parent().prevAll();
+                //设置文本框的值
+                $("#hidId").val(tds.eq(2).text());//隐藏域存放修改之前的行的ID编号值
+                $("#textId").val(tds.eq(2).text());
+                $("#textCountry").val(tds.eq(1).text());
+                $("#textCapital").val(tds.eq(0).text());
+               
+            })
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="添加" id="btnAdd" />
+    <input type="button" id="btnReverse" value="反选" />
+    <input type="button" id="btnDelete" value="删除" />
+    <table border="1">
+        <thead>
+        <th width="100"><input type="checkbox" id="checkAll" /></th>
+        <th width="200">编号</th>
+        <th width="200">国家</th>
+        <th width="200">首都</th>
+        <th width="100">修改</th>
+        </thead>
+        <tbody id="list"></tbody>
+    </table>
+    <div id="bgDiv"></div>
+    <div id="fgDiv">
+        <input type="hidden" id="hidId" />
+        编号：<input type="text" id="textId" />
+        <br>
+        国家：<input type="text" id="textCountry" />
+        <br>
+        首都：<input type="text" id="textCapital" />
+        <br>
+        <input type="button" id="btnSave" value="保存" />
+    </div>
+</body>
+</html>

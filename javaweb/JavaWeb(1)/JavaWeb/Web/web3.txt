@@ -1,0 +1,101 @@
+
+
+1、部署WEB项目时，应该部署项目到Tomcat的哪个目录下    【    】
+    A. webapps                       B. work
+    C. conf                          D. temp
+2、在上传大文件时， form表单元素采用哪个方式提交请求    【    】
+A. GET                           B. POST
+C. PUT                           D. UPLOAD
+3、下面样式规则定义错误的是                              【    】
+A. p.start{color:red}            B. start{color:red}        
+C. .start{color:red}             D. #start{color:red}
+4、使用正则表达式声明8位数字，以下代码正确的是          【    】
+A. var  reg = /\d8/;                B. var  reg = \d{8}\; 
+C. var  reg = new RegExp("\d{8}");  D. var  reg = /\d{8}/;
+5、foo对象有att属性，获取att属性的值，以下哪些写法正确（多选）     【    】
+A. foo.att                     B. foo(“att”)   
+C. foo[“att”]                   D. foo{“att”}
+6、JavaScript的关键字不包括                                          【    】
+A. window                    B. var          
+C. with                      D. void
+7、在JSP中，下面不是JSP内置对象的是                                 【    】
+    A. pageContext               B. context
+C. application               D. out
+8、下列选项中，JSP合法的表达式有                                     【    】
+A. <%2%>                     B. <%=Math.random();%>   
+C. <%="4"+"2" %>             D. <% String x="4"+"2"%> 
+9、JSP中EL表达式：${user.loginName}的执行效果等同于                 【    】
+A. <%=user.getLoginName()%>
+B. <% user.getLoginName();%>
+C. <%=user.loginName%>
+D. <% user.loginName;%>
+10、下列关于Servlet说法不正确的是                                    【    】
+A. Servlet是用Java编写的与平台无关的服务器组件            
+B. Servlet在Servlet容器中运行，其生命周期由容器管理    
+C. Servlet以多进程的方式处理客户的请求            
+D. Servlet与客户采用“请求/响应”的模式进行通信
+11、在JSP页面中，保存数据的范围由小到大依次是                        【    】
+A. pageContext, request, application, session 
+B. pageContext, application, session, request
+C. pageContext, request, session, application 
+D. pageContext, session, request, application 
+12、下列四种作用域中，哪种适合保存用户登陆信息。                      【    】
+A. pageScope                 B. requestScope
+C. sessionScope              D. applicationScope
+13、HttpServletResponse对象中,用来把一个请求进行重定的方法            【    】
+A. sendURL()                 B. redirectURL()
+C. sendRedirect()            D. redirectResponse()
+14、以下哪个标签实现了switch功能                                     【    】
+A. <c:if>                    B. <c:switch> 
+C. <c:choose>与<c:when>      D. <c:case>
+15、Servlet程序的每次调用的入口点是                     【    】
+A. init（）                  B. main（）  
+C. service（）               D. doGet（）
+
+
+
+ 
+二、判断题(本大题共5小题，每题1分,共5分。正确的写√，错误的写×)
+
+16、<%! int c=2; out.print(c);%>符合JSP表达式。           【    】
+17、JSP页面中的指令标记、JSP动作标记统称为脚本元素。    【    】
+18、Web开发技术包括客户端和服务器端的技术。             【    】
+19、WEB-INF目录中的文件能够通过浏览器访问。             【    】
+20、Servlet在Servlet容器中运行，其生命周期由容器管理。 【    】
+
+三、填空题(本大题共4小题，10个空，每空1分,共10分)
+
+21、form表单的提交方式包括______     ______和             方式。
+22、页面有元素<input type=”text”  id=”name1”  name=”name2”>,可以通过Jquery的              、              、              获得。
+23、在Servlet中获得某请求参数的方法有__                   __和
+                       。
+24、JSP内置对象中，            表示一次请求，             表示一次响应，             表示一次会话。
+
+四、简答题(本大题共4小题，每题5分,共20分。)
+
+25、在JavaScript中，对数组[6, 3, 1, 5, 2, 4]按数值进行从大到小排序，并将结果以分号相隔拼成一个字符串，并使用alert弹出该字符串。
+
+26、在JavaScript中，编写一个用户(User)类，属性有名字（name）、年龄（age），方法有show( )，在方法中使用alert弹出用户的名字和年龄。定义一个对象并调用方法。
+
+27、请详细描述Servlet的生命周期。
+
+28、假设有一个过滤器，其全限定类名为：com.web.EncodingFilter，要求它能拦截
+所有的请求，且传入字符集参数charset。请在web.xml文件中注册该过滤器。
+
+
+五、综合题（本大题共2小题，共35分）
+
+29、编写一个用户注册的JSP页面，效果图如下：
+ 
+1）、使用html编写出上图效果的页面。
+2）、提交表单时使用JS验证：①账号为4-8个字符；②密码不能为空，且二次密码必须相同。（可使用jquery获得元素）
+
+
+
+30、编写一个Servlet，获得用户信息列表，然后跳转到user_list.jsp页面，在此页面中使用JSTL标签展示用户列表信息。假设userService对象有方法listAll()返回用户列表List<User>，用户信息：ID(id)、姓名(name)、密码(passwd)。
+1)、编写Servlet类的doPost(HttpServletRequest, HttpServletResponse)方法；
+2)、在web.xml文件中注册此Servlet类；(类名：com.web.UserListServlet)；
+3)、使用JSTL标签编写展示用户列表JSP页面中的table部分。
+
+
+

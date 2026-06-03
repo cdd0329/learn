@@ -1,0 +1,60 @@
+public class UserListServlet extents HTTPServlet{
+  private userService  userservice;
+
+  public void init(){
+        userService = new userservice()
+}
+  protected void dopost(httpservletrequest request httpservletresponse response ) throws Servletexception{
+    List<user> userlist = userService.listAll()
+    request.setAttribute("userlist",userlist);
+    request.getRequestDispatcher("/user_;ist.jsp").forword(request,response);
+}
+}
+
+在web.xml文件中注册Servlet：
+
+  xml
+  Copy code
+  <servlet>
+    <servlet-name>UserListServlet</servlet-name>
+    <servlet-class>com.web.UserListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserListServlet</servlet-name>
+    <url-pattern>/userList</url-pattern>
+  </servlet-mapping>
+
+
+
+  在user_list.jsp页面中使用JSTL标签展示用户列表信息，示例代码如下：
+
+  html
+  Copy code
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>User List</title>
+  </head>
+  <body>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${userList}" var="user">
+      <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.passwd}</td>
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+  </body>
+  </html>

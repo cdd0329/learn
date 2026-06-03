@@ -1,0 +1,153 @@
+
+一、单项选择题（）
+1、 A     2、B     3、B     4、D    5、AC   
+6、 A     7、B     8、C     9、A   10、C
+11、C    12、C    13、C    14、C   15、C
+
+二、判断题(）
+	 16—20： ×  √  √  ×  √
+  .
+三、填空题(本大题共4小题，10个空，每空1分,共10分）
+     21：GET，POST
+     22：$(‘#name1’), $(‘[name=name2]’), $(‘input’)等
+     23：getParameter(), getParameterValues()
+     24：request, response, session
+
+四、简答题（）
+25、在JavaScript中，对数组[6, 3, 1, 5, 2, 4]按数值进行从大到小排序，并将结果以分号相隔拼成一个字符串，并使用alert弹出该字符串。
+<script>
+var arr = [6, 3, 1, 5, 2, 4];
+arr.sort(function(x, y) {  //3分
+    return y-x;
+});
+var str = arr.join(';');   //2分
+alert(str);
+</script>
+答： 
+26、在JavaScript中，编写一个用户(User)类，属性有名字（name）、年龄（age），方法有show( )，在方法中使用alert弹出用户的名字和年龄。定义一个对象并调用方法。。
+<script>
+function User(name, age) {  //2分
+this.name = name;
+this.age = age;
+}
+User.prototype.show = function() {  //2分
+alert(this.name + “, ” + this.age);
+}
+var user = new User(‘test’, 20); //1分
+user.sing();
+
+</script>
+
+27、请详细描述Servlet的生命周期。
+servlet有良好的生存期的定义，包括加载和实例化、初始化、处理请求以及服务结束。这个生存期由javax.servlet.Servlet接口的init,service和destroy方法表达。描述Servlet请求的流程。请HTTP协议基于请求响应模式，客户端向服务器发送一个请求，服务器则以一个状态行为作为响应。
+（1）第1次访问servlet时，实例化Servlet类并调用init方法进行初始化。
+（2）每次访问servlet时，调用service方法，service方法根据请求的类型，再调用相应的doGet或doPost()方法。
+（3）当Servlet容器关闭或重启时，调用destory方法销毁servlet对象。
+（4）Servlet默认是单实例的。
+
+28、假设有一个过滤器，其全限定名为：com.web.EncodingFilter，要求它能拦截所有的请求，且可传入字符集参数charset。请在web.xml文件中注册此过滤器。
+<filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.web.EncodingFilter </filter-class>
+<init-param>
+    <param-name>charset</param-name>
+    <param-value>UTF-8</param-value>
+</init-param>
+</filter>
+
+<filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+五、综合题（本大题共5小题，共35分）
+29、编写一个用户注册的JSP页面，效果图如下：
+1）、使用html编写出上图效果的页面（7分）
+2）、提交表单时使用JS验证：①账号为4-8个字符；②密码不能为空，且二次密码必须相同。（7分）
+<!DOCTYPE html>
+<html><head><title>用户注册</title></head><body><center>
+	<h1>用户注册</h1><hr>
+	<form action="#" method="post" onsubmit="return checkval()">
+		<table><tr>
+				<td align="right">账号：</td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr><tr>
+				<td  align="right">密码：</td>
+				<td><input type="password" name="passwd" id="passwd"></td>
+			</tr><tr>
+				<td  align="right">确认密码：</td>
+				<td><input type="password" name="passwd2" id="passwd2"></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2">
+					<input type="submit" value="确定">
+					<input type="reset" value="取消">
+				</td>
+			</tr>
+</table>
+</form></center></body></html>
+<script>
+		function checkval() {
+			var nameElm = document.getElementById('name');
+			var passwdElm = document.getElementById('passwd');
+			var passwd2Elm = document.getElementById('passwd2');
+			if(!/^\w{4,8}$/.test(nameElm.value)) {
+				alert('账号必须为[4,8]位字符');
+				nameElm.focus();
+				return false;
+			}
+			if(passwdElm.value == '') {
+				alert('密码不能为空');
+				passwdElm.focus();
+				return false;
+			}
+			if(passwdElm.value != passwd2Elm.value) {
+				alert('两次密码不相同');
+				passwd2Elm.value = '';
+				passwd2Elm.focus();
+				return false;
+			}		
+			return true;			
+		}		
+</script>
+
+30、编写一个Servlet，获得用户信息列表，然后跳转到user_list.jsp页面，在此页面中使用JSTL标签展示用户列表信息。假设userService对象有方法listAll()返回用户列表List<User>，用户信息：ID(id)、姓名(name)、密码(passwd)。
+1)、编写Servlet类的doPost()方法；
+2)、在web.xml文件中注册此Servlet类；
+3)、使用JSTL标签编写展示用户列表JSP页面中的table部分。
+1）、Servlet类的方法：
+public void doPost(HttpServletRequest req,
+       HttpServletResponse resp) throws Exception {
+List<User> list = userService.listAll();
+req.setAttribute(“list”, list);
+req.getRequestDispatcher(“/user_list.jsp”).forward(req, resp);
+}
+
+2）、web.xml中注册servlet：
+<servlet>
+<servlet-name>UserListServlet</servlet-name>
+<servlet-class>com.web.UserListServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>UserListServlet</servlet-name>
+<url-pattern>/userList</url-pattern>
+</servlet-mapping>
+
+3）、在user_list.jsp页面中展示：
+<table>
+	<tr>
+		<td>序号</td>
+		<td>ID</td>
+		<td>姓名</td>
+		<td>密码</td>
+	</tr>
+	<c:forEach var="s" items="${list}" varStatus="idx">
+		<tr>
+			<td>${idx.index+1}</td>
+			<td>${s.id}</td>
+			<td>${s.name}</td>
+                                                <td>${s.passwd}</td>
+		</tr>
+	</c:forEach>
+</table>
+

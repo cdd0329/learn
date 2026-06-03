@@ -1,0 +1,8 @@
+﻿<script>
+
+//匹配字母、数字、下划线。等价于 [A-Za-z0-9_]
+var str = "Google Runoob 123Taobao";
+//var patt1 = /\w/g;
+var patt1 = /[A-Za-z0-9_]/g;//一样
+document.write(str.match(patt1));
+</script>

@@ -1,0 +1,10 @@
+﻿<p>替换 "microsoft" 为 "中国华为" :</p>
+<button onclick="myFunction()">点我</button>
+<p id="demo">Visit Microsoft!</p>
+<script>
+function myFunction() {
+    var str = document.getElementById("demo").innerHTML; 
+    var txt = str.replace(/microsoft/i,"中国华为");
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>

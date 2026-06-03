@@ -1,0 +1,27 @@
+﻿
+<script type="text/javascript">
+//JS中文正则表达式
+
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+
+var cnPattern =/[\u4E00-\u9FA5]/;
+//输出 true
+//document.write(cnPattern.test("开发"));
+
+if(cnPattern.test(str))
+ alert("ok :JS中文正则表达式");
+ else
+ alert("error:中文正则表达式");
+
+}
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试" onclick="isValid()">

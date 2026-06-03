@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script type="text/javascript">
+    function change()
+    {    
+        money=Number(document.form1.txt1.value);
+        if(money!=parseInt(money/1)||money<1||money>100)
+        {
+          alert("请输入一个1-100的整数");
+        }
+        else{
+        var a=Math.floor(money/50);
+        var b=Math.floor((money-50*a)/20) ;
+        var c=Math.floor((money-50*a-20*b)/5);
+        var d=(money-50*a-20*b-5*c);
+        alert("找零："+"50元"+a+"张；20元"+b+"张；5元"+c+"张；1元"+d+"张。");  
+        }
+    }
+     </script>
+     输入要找的零钱：
+     <form name="form1">
+         <input name="txt1" type="text"><br>
+         <input type="button" onclick="change()" value="找零"><br>
+     </form>
+</body>
+</html>

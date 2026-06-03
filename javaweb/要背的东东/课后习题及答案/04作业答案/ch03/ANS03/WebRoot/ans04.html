@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script type="text/javascript">
+    function sort(){
+    	   var b=new Array(),l=9,avg=0;
+    	   for(var i=0;i<=l;i++){
+    		   b[i]=document.getElementById("book"+i).value;
+    	      avg=avg + Number(b[i]);
+    	   }
+    	   b=b.sort(function(a,b){return a-b;});
+    	   document.st.min.value=b[0];
+    	   document.st.max.value=b[9];
+    	   document.st.avg.value=avg/(l+1);
+    	}
+    </script>
+    请分别输入10本书的价格：
+    <form name="st">
+       <input id="book0" type="text"><br>
+       <input id="book1" type="text"><br>
+       <input id="book2" type="text"><br>
+       <input id="book3" type="text"><br>
+       <input id="book4" type="text"><br>
+       <input id="book5" type="text"><br>
+       <input id="book6" type="text"><br>
+       <input id="book7" type="text"><br>
+       <input id="book8" type="text"><br>
+       <input id="book9" type="text"><br>
+       <input type="button" onclick="sort()" value="确认"><br>
+                 结果为：<br>
+                 最高价格为<input name="max" type="text"><br>
+                 最低价格为<input name="min" type="text"><br> 
+                 平均价格为<input name="avg" type="text"><br>         
+    </form>
+</body>
+</html>

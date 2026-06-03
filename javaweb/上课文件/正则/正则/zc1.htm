@@ -1,0 +1,22 @@
+﻿
+<script type="text/javascript">
+//JS 判断输入是否为数字、字母、下划线组成
+
+function isValid() { 
+
+var str=document.getElementById("s").value;
+//return /^\w+$/.test(str);
+if(/^\w+$/.test(str))
+ alert("ok :JS 判断输入是否为数字、字母、下划线组成");
+else
+alert("error:JS 判断输入是否为数字、字母、下划线组成");
+
+ }
+
+
+
+
+</script>
+<input type="text" name="str"  id="s">
+
+<input type="button"  value="测试"  onclick="isValid()">

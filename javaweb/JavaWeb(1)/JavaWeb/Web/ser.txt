@@ -1,0 +1,63 @@
+public class UserListServlet extends HttpServlet {
+private UserService userService;
+
+public void init() {
+// 在init方法中进行userService的初始化
+userService = new UserService();
+}
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+// 调用userService的listAll方法获取用户列表
+List<User> userList = userService.listAll();
+
+  // 将用户列表存储到request属性中
+  request.setAttribute("userList", userList);
+
+  // 转发到user_list.jsp页面
+  request.getRequestDispatcher("/user_list.jsp").forward(request, response);
+  } 
+  }
+  在web.xml文件中注册Servlet：
+
+  xml
+  Copy code
+  <servlet>
+    <servlet-name>UserListServlet</servlet-name>
+    <servlet-class>com.web.UserListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserListServlet</servlet-name>
+    <url-pattern>/userList</url-pattern>
+  </servlet-mapping>
+  在user_list.jsp页面中使用JSTL标签展示用户列表信息，示例代码如下：
+
+  html
+  Copy code
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>User List</title>
+  </head>
+  <body>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${userList}" var="user">
+      <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>${user.passwd}</td>
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+  </body>
+  </html>

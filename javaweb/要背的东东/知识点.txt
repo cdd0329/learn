@@ -1,0 +1,141 @@
+在部署Web项目时，应该将项目部署到Tomcat的 webapps 目录下。
+由于 URL 的长度限制（通常最多只能传输 4KB 的数据），GET 请求不适合用于上传大文件。
+POST 请求通过请求体（Request Body）传递数据，没有长度限制
+PUT 请求也可以用于上传文件，但它通常用于资源的更新或替换。虽然理论上可以用于上传文件，但在实际的Web表单提交中并不常用。
+p.start{color:red}
+这是一个类选择器，表示选择所有<p>标签中带有class="start"的元素。语法是正确的
+var reg = new RegExp("\\d{8}");
+其中 \\ 表示一个反斜杠
+foo对象有att属性，获取att属性的值1、点表达式，foo.att2、数组表达式，foo[“att”]
+JavaScript的关键字不包括window 
+context不是jsp1的内置对象
+JSP 的标准内置对象包括：request、response、session、application、out、config、page、pageContext
+<%="4"+"2" %>合法 //不能加分号
+正确的写法应该是 <% String x = "4" + "2"; %>//分号不能少
+JSP语法1、<%--注释--%>2、指令<%@ %>3、声明<%! %>）4、脚本语言<% Java代码%>5、<%= %>相当于out.print() 
+<%! int count = 0; %>
+ Servlet是用Java编写的与平台无关的服务器组件
+Servlet在Servlet容器中运行，其生命周期由容器管理
+ Servlet以多进程的方式处理客户的请求（多线程）错了，应该是多线程
+Servlet与客户采用“请求/响应”的模式进行通信
+在标准的 HttpServletResponse 接口中，与重定向和请求转发相关的常用方法是：
+sendRedirect(String location)：用于客户端重定向
+以下哪个标签实现了switch功能
+ <c:choose>与<c:when> 
+JSTL中没有 <c:switch> 标签。
+Servlet程序的每次调用的入口点是service（）
+<%! int c=2; out.print(c);%>不符合JSP表达式。
+在JSP中，<%! %> 是用于声明变量和方法的语法，而 out.print() 是用于输出内容到页面的语句。这两者不能直接混合使用。
+在JSP（JavaServer Pages）中，指令标记（Directive）、JSP动作标记（Action）和脚本元素（Scripting Elements）是三种不同的语法结构，它们各自有不同的用途和定义。
+Web开发技术包括客户端技术和服务器端技术
+WEB-INF目录中的文件不能通过浏览器直接访问。
+Servlet在Servlet容器中运行，其生命周期由容器管理。
+在web程序结构中，浏览器端与应用服务器段采用请求/响应模式模式进行交互
+web（World Wide Web的简称）
+tomcat默认是8080
+Tomcat安装目录中webapps文件夹里的内容是网站资源文件
+B/S结构相较于C/S结构服务器负担比较重，快速响应不如C/S结构
+JSP的全称是 Java Server Pages
+正确的URL为http://localhost:8080/Prj01/index.jsp
+web.xml 文件不能随意修改
+META-INF是系统自动生成、用于存放系统描述信息的文件夹
+WebRoot目录是Web应用的顶层目录,也称为文档的根目录
+html全称超文本标记语言
+<table></table>定义表格
+<frameset>标签的rows属性表示将页面横向分割。
+<frame>标签的src属性的值表示框架内容的地址
+html对大小写不敏感
+<table> 标签的 bordercolor 属性的值默认是浏览器决定的（通常为黑色或无边框，取决于浏览器）
+当设置的属性有重叠时，表元的属性总是跟它离得最近的设置相同
+cellpadding 是 HTML4 的属性，它表示单元格内容与单元格边框之间的间距。
+表元边框与表格边框之间的间距由 cellspacing 控制
+<select> 的核心功能就是创建下拉菜单
+框架网页中的每个窗口（frame）确实是一个独立的HTML文档，可以包含完整的HTML结构。
+cols属性用于纵向分割页面（将浏览器窗口分为左右列），而rows属性才用于横向分割（将窗口分为上下行）。
+在<frame>标签中不需要再写<body>，因为框架本身只是引用另一个HTML文档的显示区域。
+每一个<frame>表示一个框架窗口,它的排序依次为从左到右、从上到下
+浏览器对 JavaScript脚本程序进行解释执行。
+JavaScript的内置对象window负责操作浏览器窗口，其中window.alert()方法可以弹出消息框，window.close()方法可以关闭窗口，window.open()方法可以打开新窗口
+ history对象包含用户的浏览历史等信息，其中history.back()方法相当于单击浏览器上的后退按钮
+history.forward()方法相当于单击浏览器上的前进按钮。
+在名为form的表单中有一个文本框account,其中的内容可以用代码 document.form.account.value获得。
+用 location对象实现跳转到网页 a.html的代码是window.location.href="a.html"
+document对象从属window对象
+用 document对象可以进行一些简单网页属性的设置,通过document.title来访问标题，通过document.location来获取当前网页的地址
+JavaScript对大小写是敏感的
+JavaScript代码通常由浏览器直接解释执行
+window.status属性用于指定浏览器状态栏中显示的临时消息。
+window.toolbar通常用于访问或操作浏览器的工具栏相关对象
+window.location对象用于获取或设置当前窗口的URL信息，它可以用来重定向页面、获取当前页面的协议、主机名、路径等
+window.status = "这是状态栏"
+window.open()方法有三个参数：
+URL：要加载的文档的 URL。
+窗口名称：可选。
+窗口特性：可选。
+JSP不属于静态网页
+在客户端的源代码中是看不到JSP页面中的Java代码的
+JSP引擎首先将JSP页面转换为Java文件（Servlet类），经过编译和执行后，才会生成HTML内容返回给客户端
+JSP表达式的基本语法格式为：<%= Java表达式 %>
+在JSP表达式中不能出现多条语句
+在JSP表达式中不能用“;”结束
+java全局变量<%!String str;%>
+在JSP中，contentType属性用于设置JSP页面的MIME类型和可选字符编码
+其中text/html表示MIME类型
+pageEncoding属性用于指定JSP页面的编码方式，它主要影响JSP页面本身的存储编码，而不是设置MIME类型。
+<jsp:useBean>动作标签用于在JSP页面中查找或实例化一个JavaBean对象。
+<jsp:setProperty>动作标签用于设置JavaBean的属性值
+<jsp:getProperty>动作标签用于获取JavaBean的属性值，并将其输出到JSP页面中。
+<jsp:plugin> 动作元素用于在JSP页面中生成包含Java插件（Java Plugin）的HTML代码，以便在客户端浏览器中运行Java小程序（Applet）或JavaBeans组件
+捆绑表单元素数据的获取方法为request.getParameterValues()
+HTTP是无状态的协议,在页面之间传递值时必须通过服务器
+ 在java.sql包中负责执行数据库 SQL语句的类是java.sql.Statement
+JDBC的中文名称是Java数据库连接
+request对象对应的类型是javax.servlet.http.HttpServletRequest
+Cookie 是一个小的文本数据，由服务器端产生,发送给客户端服务器
+<jsp:forward>动作属于服务器端的行为
+<jsp:forward>转发时，转发页面和目标页面可以共享request对象中的数据，因为它们处于同一个请求 - 响应周期内。
+response.sendRedirect是客户端发起新的请求，新的请求和原来的请求是相互独立的，所以不能共享原来request里面的数据。
+<jsp:forward>方法只能在同一个Web应用程序内的资源之间转发请求，它是在服务器内部进行的转发，不能跨Web应用。
+<jsp:forward>是在服务器内部直接将请求转发到目标资源，不需要客户端的参与，效率相对较高。
+response.sendRedirect需要客户端发起新的请求，涉及到网络传输等操作，效率相对较低。
+session.invalidate() 方法会立即终止当前的会话，并清除与该会话相关联的所有数据
+application对应的类是javax.servlet.ServletContext
+ config对象是在一个JSP程序初始化时JSP引擎向它传递消息用的。
+page 对象指向当前JSP程序本身
+session能够跨页保持数据
+对于同一个用户，当网站的页面改变时，用户使用的session并不会改变。session是基于用户在整个会话过程中的唯一标识来管理数据的，只要用户的会话没有结束（比如浏览器没有关闭，或者session没有超时），无论用户访问网站中的哪个页面，使用的都是同一个session对象。
+session.removeAttribute(String name)方法的作用是从session中移除指定名称的属性，而不是将session中的所有内容删除
+在客户端访问下一个页面时，通常会通过Cookie或者URL重写等方式将sessionId传递给服务器端，以便服务器能够识别出这是同一个用户的会话
+application对象是ServletContext的一个实例，它在整个Web应用程序的生命周期内是共享的，对于不同的客户端来说，服务器端的application对象是相同的
+application对象对应的类是javax.servlet.ServletContext
+application对象在整个Web应用中共享，可以用来记录显示某个页面被访问的次数等信息
+exception对象对应的类是java. lang.Exception
+Servlet 为每一个HttpSession对象分配的唯一的标识符是SessionID
+在Servlet程序中，Servlet对象消亡时调用的方法是destroy() 
+Filter接口中最主要的方法是doFilter() 
+实现Filter接口的类需要重写init()方法，destory()方法，doFilter()方法
+过滤器的 doFilter()函数在 Servlet之前被调用。
+csses文件夹通常用于存放CSS样式表文件（不是必须的）
+WEB-INF文件夹（是必须的）
+ServletContext对象为Web应用程序提供了一个全局的存储区域，它代表了整个Web应用的上下文环境。
+ServletConfig对象包含了Servlet的初始化参数以及Servlet的ServletContext对象等信息（但是针对单个Servlet）
+response.getWriter()方法用于获取一个PrintWriter对象，该对象可以向客户端输出字符数据。
+request.getSession().getAttribute("A")从session作用域获取数据
+在JavaBean中可以将控制逻辑、值、数据库访问和其他对象进行封装，并且可以被其他对象调用。
+在JavaBean中，属性通常被声明为private而方法（特别是用于访问和修改属性的getter和setter方法）需要声明为public
+在JSP中使用<jsp:useBean>标签来引入Bean对象时，id属性用于为该Bean对象指定一个唯一的标识符。
+使用<jsp:getProperty>可以在JSP页面中得到Bean示例的属性值，并将其转换为String类型的数据发送到客户端
+<jsp:useBean>标签：用于在JSP页面中查找或实例化一个JavaBean对象。
+EL的全称是Expression Language中文名称为表达式语言
+.运算符是静态取值而[]运算符可以动态取值
+当要存取的属性名称中包含一些特殊字符（如.、?等并非字母或数字的符号）时，.运算符无法正确解析，此时必须使用[]运算符
+EL表达式获取属性的顺序是按照page、request、session、application的作用域顺序进行查找的，一旦找到匹配的属性，就会停止查找并返回该属性的值。
+escapeXml属性用于指定是否对特殊字符进行XML转义。
+https://www.kimi.com/
+
+
+
+
+
+
+

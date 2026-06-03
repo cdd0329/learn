@@ -1,0 +1,11 @@
+﻿
+<p>搜索字符串 "Wynoob", 并显示匹配的起始位置：</p>
+<button onclick="myFunction()">点我</button>
+<p id="demo"></p>
+<script>
+function myFunction() {
+    var str = "Visit Wynoob!"; 
+    var n = str.search(/Wynoob/i);
+    document.getElementById("demo").innerHTML = n;
+}
+</script>

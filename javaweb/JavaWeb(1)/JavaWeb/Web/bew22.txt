@@ -1,0 +1,124 @@
+
+
+
+ 	
+一、单项选择题（本大题共15小题，每题只有一个正确答案，每题2分，共30分）   
+
+1、Tomcat配置文件server.xml中，代表一个Web应用的元素是 【    】
+A. <Context>                  B. <Serice>    
+C. <Connector>                D. <Engine>
+2、JSP代码 <%="1+4"%> 的结果是                          【    】 
+A. 1+4                        B. 5        
+C. 14                         D. 无输出  
+3、以下关于JavaScript说法错误的是                      【    】
+A.它是一种基于对象和事件驱动并具有安全性能的脚本语言           
+B.它是通过嵌入或调入在标准的HTML语言中实现的    
+C.它可以做到响应使用者的需求事件，而不用任何网络来回传输数据            
+D.它是一种编译型编程语言
+
+
+4、在JSP中，以下不是JSP隐式对象的是                                 【    】
+    A. pageContext                 B. context 
+C. application                 D. out
+5、创建单选按钮的表单字段元素为                                       【    】
+A. <input type="submit">       B. <input type="checkbox"> 
+C. <input type="radio">        D. <input type="text">
+6、Servlet 可以在以下（）三个不同的作用域存储数据。                   【    】
+A. 请求、会话和上下文          B. 响应、会话和上下文
+C. 请求、响应和会话            D. 请求、响应和上下文
+7、JavaScript的关键字不包括                                           【    】
+A. script                      B. var
+C. with                        D. in
+8、从HTTP请求中，获得请求参数，应该调用哪个方法                      【    】
+A. 调用HttpServletRequest对象的getAttribute()方法
+B. 调用ServletContext对象的getAttribute()方法 
+C. 调用HttpServletRequest对象的getParameter()方法
+D. 调用ServletContext对象的getParameter()方法
+9、JSP页面中有一行代码<% 1+3; %>,运行该JSP后，以下说法正确的是      【    】
+    A. 这行代码没有对应的输出       B. 这行代码对应的输出是：4
+    C. 这行代码对应的输出是：1+3    D. 这行代码将引发错误 
+10、试图运行如下JSP代码，一下说法正确的是                            【    】
+<% String str = "hello world";  ①
+session.setAttribute("title",str);　②
+String getStr = session.getAttribute("title");　③
+out.println(getStr);　④  %>
+A. 运行成功，页面上输出hello world
+B. 运行成功，页面上输出title  
+C. 代码行②有错误，无法运行 
+D. 代码行③有错误，无法运行
+11、下列四种作用域中，哪种适合保存用户登陆信息                        【    】
+A. pageScope                    B. requestScope
+C. sessionScope                 D. applicationScope
+12、在web.xml配置了Servlet、过滤器、监听器，它们的启动顺序为        【    】
+A. Servlet > 监听器 > 过滤器    B. 过滤器 > 监听器 > Servlet   
+C. 监听器 > 过滤器 > Servlet    D. 监听器 > Servlet > 过滤器
+13、以下哪个参数不属于<c:foreach>标签                   【    】
+A．var                   B. begin
+C. end                   D. delims
+14、关于正则表达式声明6位数字的邮编，以下代码正确的是  【    】
+A. var??reg?=?/\d6/;?
+B. var??reg?=?\d{6}\;?
+C. var??reg?=?/\d{6}/;
+D. var??reg?=?new?RegExp("\d{6}");
+15、foo对象有att属性，那么获取att属性的值，下列错误的是【    】
+A. foo.att 
+B. foo("att") 
+C. foo["att"] 
+D. foo["a"+"t"+"t"] 
+
+  	
+二、判断题(本大题共10小题，每题1分,共10分正确的写T，错误的写F)
+
+16、JjavaScript可以访问本地磁盘，能对网络文件进行修改。  【    】
+17、param是表达式语言EL 的隐含对象。                    【    】
+18、WEB-INF 目录中的文件允许被客户端访问。               【    】
+19、Servlet是用Java编写的与平台无关的服务器端组件。     【    】
+20、不可以用一个page指令指定多个属性的取值。            【    】
+21、<％=1+2;％>符合JSP表达式。                          【    】
+22、init()方法是容器创建Servlet实例后调用的第一个方法。 【    】
+23、JSP内置对象session用于存储一个用户的会话状态。     【    】
+24、JavaScript是Java的子集。                           【    】
+25、在MVC模式的Web开发中，“视图”、“模型”和“控制器”分别对应
+着“JSP页面”、“JavaBean”和“Serlvet”，以Servlet为核心。【    】
+得分	评卷人
+	
+
+三、简答题(本大题共4小题，每题5分,共20分。)
+
+
+26、用JavaScript对数组[3, 6, 1, 5, 2, 8, 4, 7]进行从大到小排序。
+
+
+27、使用javascript编写一个学生(Student)类，属性:名字（name）、学号（sno），方法:打印（show），在方法体中使用alert弹出学生的名字和学号。
+
+28、请描述Servlet的生命周期。
+
+
+29、假设有一个过滤器，其全限定名为：com.kzw.web.EncodingFilter，要求它能拦截
+所有的请求，且可传入字符集参数charset。请在web.xml文件中注册此过滤器。
+
+四、综合题（本大题共2小题，每题20分，共40分）
+
+30、编写一个增加人员的JSP页面，效果图如下：
+
+1）、使用html编写出上图效果的页面
+2）、使用javascript验证昵称、密码不能为空，且密码长度不能少于5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31、编写一个Servlet获得用户信息列表，然后跳转到userlist.jsp页面。
+(假设存在userService对象，该类有方法listAll()返回用户列表List<User>)
+1)、编写Servlet类的doPost(HttpServletRequest, HttpServletResponse)方法；
+2)、在web.xml文件中注册此Servlet类；(类名：com.test.web.UserListServlet)
+

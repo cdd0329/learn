@@ -1,0 +1,43 @@
+﻿
+<pre>
+选择集过滤的介绍
+选择集过滤就是在选择标签的集合里面过滤自己需要的标签
+
+选择集过滤的操作
+has(选择器名称)方法，表示选取包含指定选择器的标签
+eq(索引)方法，表示选取指定索引的标签
+has方法的示例代码:
+</pre>
+<script src="jquery-3.2.1.min.js"></script>
+
+
+  <script>
+    $(function(){
+        //  has方法的使用
+        var $div = $("div").has("#mytext");
+        //  设置样式
+        $div.css({"background":"red"});
+ 
+        //  eq方法的使用
+        var $div = $("div").eq(2);
+        //  设置样式
+        $div.css({"background":"yellow"});
+    });
+</script>
+ 
+<div>
+    这是第一个div
+    <input type="text" id="mytext">
+</div>
+ 
+<div>
+    这是第二个div
+    <input type="text">
+    <input type="button">
+</div>
+
+<div>
+    这是第3个div
+    <input type="text">
+    <input type="button">
+</div>
